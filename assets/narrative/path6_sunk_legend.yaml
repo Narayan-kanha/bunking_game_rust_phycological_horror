@@ -1,0 +1,72 @@
+title: "STORY PATH 6 — THE SUNK LEGEND (MUD ENDING)"
+frames:
+  - index: 1
+    time: "00:00–00:03"
+    camera: "Black frame → bell toll."
+    lighting: "N/A."
+    notes: "SFX Bell S1 low-pass."
+  - index: 2
+    time: "00:03–00:12"
+    camera: "Crane down to mud surface."
+    lighting: "Cold gray key."
+    notes: "M1 dissonant cello."
+  - index: 3
+    time: "00:12–00:18"
+    camera: "CU – E on spire."
+    lighting: "Single rim light."
+    notes: "VO Ethan 'It keeps pulling.'"
+  - index: 4
+    time: "00:18–00:30"
+    camera: "360 pan – reflections of friends."
+    lighting: "Rippling reflections."
+    notes: "Layered voices 'You left.'"
+  - index: 5
+    time: "00:30–00:40"
+    camera: "Insert – portrait frame float."
+    lighting: "Top spot."
+    notes: "Choir 'Take it. Leave it.'"
+  - index: 6
+    time: "00:40–00:55"
+    camera: "Two-shot – Graves appears."
+    lighting: "Soft key spot."
+    notes: "VO Graves 'You found the place.'"
+  - index: 7
+    time: "00:55–01:05"
+    camera: "CU – E shaking."
+    lighting: "Low fill."
+    notes: "VO Cass/Maya/TJ 'Don’t sink.'"
+  - index: 8
+    time: "01:05–01:15"
+    camera: "OTS – Graves offers bell."
+    lighting: "Edge light."
+    notes: "VO Graves 'Wake or Bind.'"
+  - index: 9
+    time: "01:15–01:35"
+    camera: "Rapid cuts – decision build."
+    lighting: "Flashing strobe."
+    notes: "Heartbeat 120→160 BPM."
+  - index: 10
+    time: "01:35–01:40"
+    camera: "Choice A – E drops portrait."
+    lighting: "Soft fade."
+    notes: "VO E 'I’m tired.'"
+  - index: 11
+    time: "01:40–02:10"
+    camera: "Sink POV – FOV narrowing."
+    lighting: "Grayscale bleach."
+    notes: "Silence → white noise."
+  - index: 12
+    time: "02:10–02:30"
+    camera: "Alt Choice B – Mud engulfs town."
+    lighting: "Overhead drone."
+    notes: "Bell triple toll."
+  - index: 13
+    time: "02:30–02:45"
+    camera: "Static menu shot."
+    lighting: "Black UI."
+    notes: "Whisper 'We forgot you.'"
+  - index: 14
+    time: "02:45–02:50"
+    camera: "Title card: TRY AGAIN."
+    lighting: "Blank screen."
+    notes: "End tone fade."

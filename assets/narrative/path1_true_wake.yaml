@@ -1,0 +1,42 @@
+title: "STORY PATH 1 — THE TRUE WAKE"
+frames:
+  - index: 1
+    time: "00:00–00:06"
+    camera: "Wide MS – chapel interior, handheld tilt up from pews."
+    lighting: "Diffused sunlight through stained glass."
+    notes: "SFX M1 soft strings – choir hum."
+  - index: 2
+    time: "00:06–00:12"
+    camera: "Push-in CU – Ethan places diary on altar."
+    lighting: "Warm key + rim fill."
+    notes: "VO Ethan (whisper) 'Finally…'"
+  - index: 3
+    time: "00:12–00:20"
+    camera: "Reverse CU – Graves in doorway, focus pull."
+    lighting: "Backlight flare."
+    notes: "SFX soft bell – -12 dB."
+  - index: 4
+    time: "00:20–00:30"
+    camera: "OTS E→G – Graves sits beside Ethan."
+    lighting: "Balanced key."
+    notes: "VO Graves 'We live because someone stayed.'"
+  - index: 5
+    time: "00:30–00:40"
+    camera: "Profile MS – shared silence."
+    lighting: "No dialogue."
+    notes: "Ambient wind."
+  - index: 6
+    time: "00:40–00:55"
+    camera: "Tracking WS – Ethan exits chapel to courtyard."
+    lighting: "Sunlight flare."
+    notes: "Music crescendo → cut."
+  - index: 7
+    time: "00:55–01:10"
+    camera: "Slow zoom on empty pew."
+    lighting: "Soft grain."
+    notes: "VO (choir) 'You went home.'"
+  - index: 8
+    time: "01:10–01:40"
+    camera: "Fade to photo montage of friends."
+    lighting: "Crossfade warm tones."
+    notes: "End credits cue."
