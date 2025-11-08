@@ -2,18 +2,41 @@
 name = "Bunk_Again_Lakshmi_Narayan"
 version = "0.1.0"
 edition = "2021"
+license = "MIT"
+authors = ["Narayan Kanha"]
+publish = false
 
 [dependencies]
+# Core engine
+bevy = { version = "0.14.2", default-features = true } 
+# (If you later want faster compile + smaller binary, consider disabling default features and enabling only: 
+# features = ["bevy_asset", "bevy_winit", "bevy_render", "png", "x11"] etc.)
+
+# Physics (Rapier matches Bevy 0.14 with 0.24 line)
+bevy_rapier3d = { version = "0.24.0", features = ["debug-render-3d"] }
+
+# Data / serialization
 serde = { version = "1", features = ["derive"] }
 serde_yaml = "0.9"
-anyhow = "1.0"
-bevy = { version = "0.14.2", default-features = true }
-bevy_rapier3d = { version = "0.24.0", features = ["debug-render-3d"] }
-rand = "0.8"
 ron = "0.8"
+anyhow = "1.0"
+rand = "0.8"
+
+# Asset pipeline
 bevy_asset_loader = "0.20"
+
+# Debug / tooling
 bevy-inspector-egui = "0.22"
 bevy_ecs_tilemap = "0.11"
+
+# (Optional) Audio timeline enhancements (suggested for your VO/SFX system later)
+# bevy_kira_audio = { version = "0.19", features = ["ogg"] }
+
+# (Optional) For JSON timeline interchange or remote sync
+# serde_json = "1"
+
+[dev-dependencies]
+# Hot reload utilities or testing frameworks can go here later
 
 [profile.dev]
 opt-level = 1
@@ -26,3 +49,4 @@ opt-level = 3
 lto = "thin"
 codegen-units = 1
 strip = true
+panic = "abort"
