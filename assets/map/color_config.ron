@@ -1,0 +1,8 @@
+{
+    "#00FF00": { "type": "grass", "model": null },
+    "#000000": { "type": "road", "model": "kenney_city-kit-roads/road.glb" },
+    "#0000FF": { "type": "water", "model": null },
+    "#C0C0C0": { "type": "building", "model": "kenney_city-kit-suburban_20/building.glb" },
+    "#FFA500": { "type": "shop", "model": "kenney_mini-market/market.glb" },
+    "#FF0000": { "type": "spawn", "model": null },
+}
