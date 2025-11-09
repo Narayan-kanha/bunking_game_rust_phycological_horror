@@ -10,7 +10,6 @@ mod route_mapping;
 use narrative::{ActiveTimeline, load_timeline_from_file};
 use route_events::{StartRoute, EndingCompleted, FinalBellUnlocked};
 use progression::GameProgress;
-use endings::GameEnding;
 use escape_routes::{EscapeRoutePlugin, Player};
 use route_mapping::{route_timeline_path, route_result_ending};
 
@@ -41,7 +40,7 @@ fn main() {
             }),
             ..default()
         }))
-        .insert_state(GamePhase::Menu) // FIX: replace add_state
+        .insert_state(GamePhase::Menu)
         .insert_resource(GameProgress::default())
         .add_event::<StartRoute>()
         .add_event::<EndingCompleted>()
@@ -82,7 +81,7 @@ fn menu_input(
     keyboard: Res<ButtonInput<KeyCode>>,
 ) {
     if keyboard.just_pressed(KeyCode::F1) {
-        info!("Debug: F1 pressed (menu is already active).");
+        info!("Debug: F1 pressed (menu is active).");
     }
 }
 
@@ -91,12 +90,13 @@ fn on_start_route(
     mut next: ResMut<NextState<GamePhase>>,
     mut commands: Commands,
 ) {
-    for start in ev.read() { // FIX: .read()
+    for start in ev.read() {
         let route_id = start.route_id;
         if let Some(path) = route_timeline_path(route_id) {
             match load_timeline_from_file(path) {
                 Ok(timeline) => {
                     info!("Starting timeline for route {} -> {}", route_id, path);
+                    info!("Timeline: {}", timeline.title); // Use title to silence narrative warning
                     commands.insert_resource(ActiveTimeline::from_timeline(&timeline));
                     commands.insert_resource(ActiveRoute { id: route_id });
                     commands.spawn((
@@ -126,7 +126,7 @@ fn run_timeline(
     mut active: Option<ResMut<ActiveTimeline>>,
     mut backdrop_q: Query<&mut Sprite, With<TimelineBackdrop>>,
 ) {
-    let Some(mut active) = active.as_mut() else { return; };
+    let Some(active) = active.as_mut() else { return; };
     let just_advanced = active.tick_and_maybe_advance(time.delta());
     if let Some(frame) = active.current_frame() {
         if just_advanced {
@@ -179,7 +179,7 @@ fn progression_monitor(
     mut ending_ev: EventReader<EndingCompleted>,
     mut unlock_ev: EventWriter<FinalBellUnlocked>,
 ) {
-    for ev in ending_ev.read() { // FIX: .read()
+    for ev in ending_ev.read() {
         gp.mark_completed(ev.ending);
         info!("Progress: {} endings completed.", gp.completed.len());
         if gp.final_bell_unlocked {
@@ -192,6 +192,6 @@ fn color_for_index(i: usize) -> Color {
     let r = (((i as f32) * 37.0) % 255.0) / 255.0;
     let g = (((i as f32) * 83.0) % 255.0) / 255.0;
     let b = (((i as f32) * 149.0) % 255.0) / 255.0;
-    Color::rgb(r.max(0.15), g.max(0.15), b.max(0.15)) // FIX: rgb()
+    Color::srgb(r.max(0.15), g.max(0.15), b.max(0.15))
 
 }

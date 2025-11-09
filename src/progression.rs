@@ -41,4 +41,6 @@ impl GameProgress {
             self.final_bell_unlocked = true;
         }
     }
+
 }
+
