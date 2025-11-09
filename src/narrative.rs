@@ -1,7 +1,8 @@
-use anyhow::Context;
+use anyhow::{Context, Result};
 use bevy::prelude::*;
 use serde::Deserialize;
 use std::time::Duration;
+use std::fs;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Timeline {
@@ -12,11 +13,11 @@ pub struct Timeline {
 #[derive(Debug, Deserialize, Clone)]
 pub struct Frame {
     pub index: usize,
-    pub time: String,     // e.g., "00:00–00:06" (en dash or hyphen supported)
-    pub camera: String,   // Camera & Action
-    pub lighting: String, // Lighting
+    pub time: String,     // "00:00–00:06"
+    pub camera: String,
+    pub lighting: String,
     #[serde(default)]
-    pub notes: String, // VO/SFX Notes
+    pub notes: String,
 }
 
 impl Timeline {
@@ -35,6 +36,7 @@ pub struct ActiveTimeline {
     pub timeline: Timeline,
     pub current: usize,
     pub timer: Timer,
+    pub finished: bool,
 }
 
 impl ActiveTimeline {
@@ -44,14 +46,22 @@ impl ActiveTimeline {
             timeline: t.clone(),
             current: 0,
             timer: Timer::from_seconds(duration, TimerMode::Once),
+            finished: false,
         }
     }
 
     pub fn current_frame(&self) -> Option<&Frame> {
-        self.timeline.frames.get(self.current)
+        if self.finished {
+            None
+        } else {
+            self.timeline.frames.get(self.current)
+        }
     }
 
     pub fn tick_and_maybe_advance(&mut self, delta: Duration) -> bool {
+        if self.finished {
+            return false;
+        }
         self.timer.tick(delta);
         if self.timer.finished() {
             self.current += 1;
@@ -60,7 +70,7 @@ impl ActiveTimeline {
                 self.timer = Timer::from_seconds(secs, TimerMode::Once);
                 true
             } else {
-                // End of timeline; keep None frame
+                self.finished = true;
                 false
             }
         } else {
@@ -69,9 +79,19 @@ impl ActiveTimeline {
     }
 }
 
-pub fn load_timeline_from_yaml_str(yaml: &str) -> anyhow::Result<Timeline> {
+pub fn load_timeline_from_yaml_str(yaml: &str) -> Result<Timeline> {
     let t: Timeline = serde_yaml::from_str(yaml).context("Parsing YAML timeline")?;
-    // Basic validation: indexes monotonic and time ranges sane
+    validate_timeline(&t)?;
+    Ok(t)
+}
+
+pub fn load_timeline_from_file(path: &str) -> Result<Timeline> {
+    let content = fs::read_to_string(path)
+        .with_context(|| format!("Reading timeline file: {}", path))?;
+    load_timeline_from_yaml_str(&content)
+}
+
+fn validate_timeline(t: &Timeline) -> Result<()> {
     for (i, f) in t.frames.iter().enumerate() {
         if f.index != i + 1 {
             anyhow::bail!("Frame index mismatch at position {}: got {}", i, f.index);
@@ -81,12 +101,12 @@ pub fn load_timeline_from_yaml_str(yaml: &str) -> anyhow::Result<Timeline> {
             anyhow::bail!("Non-positive duration at frame {} time '{}'", f.index, f.time);
         }
     }
-    Ok(t)
+    Ok(())
 }
 
-// Accepts "mm:ss–mm:ss" or "mm:ss-mm:ss" or with spaces
+// Accepts "mm:ss–mm:ss" or "mm:ss-mm:ss"
 fn parse_time_range(s: &str) -> (f32, f32) {
-    let cleaned = s.trim().replace('–', "-"); // normalize en-dash to hyphen
+    let cleaned = s.trim().replace('–', "-");
     let mut parts = cleaned.split('-').map(str::trim);
     let left = parts.next().unwrap_or("00:00");
     let right = parts.next().unwrap_or("00:01");

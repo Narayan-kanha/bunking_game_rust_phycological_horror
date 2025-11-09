@@ -1,0 +1,77 @@
+title: "STORY PATH 3 — THE CYCLE BREAKER"
+frames:
+  - index: 1
+    time: "00:00–00:06"
+    camera: "WS – main hall at dawn; rows of lockers stretch endlessly."
+    lighting: "Flickering fluorescents with golden sunrise bleeding through cracks."
+    notes: "SFX: ticking clock loop; faint mechanical hum."
+  - index: 2
+    time: "00:06–00:12"
+    camera: "Dolly-in MS – Ethan walks toward the exit sign, shoes echoing."
+    lighting: "Alternating strobe pattern – every flicker syncs with his breath."
+    notes: "VO Ethan (low) 'Every day ends the same way… unless I end it first.'"
+  - index: 3
+    time: "00:12–00:20"
+    camera: "CU – security camera blinks red, then burns out."
+    lighting: "Sparks and smoke; crimson reflections on Ethan’s face."
+    notes: "SFX: electric pop; distorted intercom static."
+  - index: 4
+    time: "00:20–00:28"
+    camera: "OTS W→E – The Warden appears behind Ethan, mirrored in the glass door."
+    lighting: "Harsh white top light; dust floating in frame."
+    notes: "VO Warden 'You think walking out makes you free?'"
+  - index: 5
+    time: "00:28–00:40"
+    camera: "Reverse OTS E→W – Ethan turns; handheld shake intensifies."
+    lighting: "Emergency red fills hall; fire alarm flashes."
+    notes: "VO Ethan 'No. It makes me responsible.'"
+  - index: 6
+    time: "00:40–00:55"
+    camera: "Tracking WS – fire doors slam shut ahead; Ethan sprints toward camera."
+    lighting: "Red strobe with silhouettes crossing behind windows."
+    notes: "SFX: fire alarm blare; music motif 'Cycle Pulse' begins."
+  - index: 7
+    time: "00:55–01:10"
+    camera: "Low-angle MS – Ethan kicks a locker open; sparks shower upward."
+    lighting: "Hard underlight from open locker."
+    notes: "VO Warden (echo) 'Rules keep you safe.'"
+  - index: 8
+    time: "01:10–01:25"
+    camera: "CU – Ethan holds up the diary; pages ignite midair."
+    lighting: "Warm firelight consumes frame edges."
+    notes: "VO Ethan 'Then maybe I don’t deserve safety.'"
+  - index: 9
+    time: "01:25–01:40"
+    camera: "WS – flames chase through hallway as sprinklers activate."
+    lighting: "Mixed: orange fire vs. cold sprinkler reflection."
+    notes: "SFX: burning paper, alarm muffled by water."
+  - index: 10
+    time: "01:40–01:55"
+    camera: "CU – The Warden watches through smoke, unmoving."
+    lighting: "Monochrome desaturation; only red EXIT sign glows."
+    notes: "VO Warden (calm) 'Breaking it doesn’t end it.'"
+  - index: 11
+    time: "01:55–02:15"
+    camera: "Tracking WS – Ethan runs through shattered door into blinding daylight."
+    lighting: "Overexposed golden flare; lens burn."
+    notes: "Music: crescendo of 'Cycle Pulse' with reverse cymbal tail."
+  - index: 12
+    time: "02:15–02:30"
+    camera: "WS – outside campus fence; empty street ahead."
+    lighting: "Harsh contrast; static handheld framing."
+    notes: "VO Ethan (breathing) 'Then I’ll end it again tomorrow.'"
+  - index: 13
+    time: "02:30–02:50"
+    camera: "High-angle drone shot – smoke pours from school roof."
+    lighting: "Backlight orange haze; shadows stretch unnaturally long."
+    notes: "SFX: collapsing metal; faint whisper loop under mix."
+  - index: 14
+    time: "02:50–03:10"
+    camera: "Fade to CU – burnt diary page lands in puddle, still smoldering."
+    lighting: "Muted daylight reflections; ripples from raindrops."
+    notes: "VO (choir) 'We burned the clock… but time stayed.'"
+  - index: 15
+    time: "03:10–03:30"
+    camera: "Slow zoom – clock face cracked under water; second hand still ticking."
+    lighting: "Soft shimmer with faint lens dirt texture."
+    notes: "Music: single sustained piano note fading to silence."

@@ -1,0 +1,77 @@
+title: "STORY PATH 4 — THE FRAGMENTED MIND"
+frames:
+  - index: 1
+    time: "00:00–00:10"
+    camera: "WS – rooftop suspended in white fog; world edges dissolve into void."
+    lighting: "Flat gray gradient; no shadows or depth cues."
+    notes: "SFX: wind gust; faint electrical hiss under layer."
+  - index: 2
+    time: "00:10–00:18"
+    camera: "WS – NPCs below frozen mid-motion, mid-laugh, mid-blink."
+    lighting: "Soft overcast; grayscale desaturation at 85%."
+    notes: "Absolute silence; ambient mix cut abruptly."
+  - index: 3
+    time: "00:18–00:28"
+    camera: "CU – Ethan tilts head sideways; his reflection in glass delays by 3 frames."
+    lighting: "Neutral key; reflection tinted red channel offset."
+    notes: "VO Ethan (echoed) 'Why am I… late?'"
+  - index: 4
+    time: "00:28–00:40"
+    camera: "Tracking MS – Ethan walks through identical doorways endlessly."
+    lighting: "Looping corridor lighting; flicker every 5 seconds."
+    notes: "SFX: footsteps phase-panned left→right; heartbeat sync irregular."
+  - index: 5
+    time: "00:40–00:55"
+    camera: "OTS E→Mirror – reflection blinks when he doesn’t."
+    lighting: "Pale cyan fill with shadow that moves opposite direction."
+    notes: "VO Mirror (distorted) 'You left me behind.'"
+  - index: 6
+    time: "00:55–01:10"
+    camera: "MS – lockers open and close by themselves, rhythmically."
+    lighting: "Alternating warm and cold pulses."
+    notes: "SFX: metallic slams as percussion; reverb tail infinite decay."
+  - index: 7
+    time: "01:10–01:25"
+    camera: "CU – Ethan’s notebook pages flip backwards violently."
+    lighting: "Harsh overhead light strobing at 2Hz."
+    notes: "VO Ethan 'Stop rewinding me!'"
+  - index: 8
+    time: "01:25–01:40"
+    camera: "WS – hallway folds upward into itself like origami."
+    lighting: "Top-down white bloom; perspective bends inward."
+    notes: "SFX: bending metal + reversed whisper layer."
+  - index: 9
+    time: "01:40–01:55"
+    camera: "CU – multiple Ethans arguing in overlapping dialogue."
+    lighting: "Red/blue alternating key; flicker sync with dialogue."
+    notes: "VO Ethan x3 (layered): 'You made me / You forgot me / You owe me.'"
+  - index: 10
+    time: "01:55–02:10"
+    camera: "WS – The Warden appears at far end of hall, flickering between frames."
+    lighting: "Strobe neutral → deep orange; frames drop intentionally."
+    notes: "VO Warden (glitched) 'There is no bell. There never was.'"
+  - index: 11
+    time: "02:10–02:25"
+    camera: "MS – Ethan reaches toward camera; image breaks into static fragments."
+    lighting: "High-contrast edge lighting; vignette shrink 80%."
+    notes: "SFX: static burst; audio skips 3 seconds mid-line."
+  - index: 12
+    time: "02:25–02:40"
+    camera: "First-person – hands dissolve pixel by pixel."
+    lighting: "White overexposure; bloom threshold zero."
+    notes: "VO Ethan (whisper) 'If I vanish, do I end it… or begin again?'"
+  - index: 13
+    time: "02:40–02:55"
+    camera: "WS – void resets; Ethan reappears facing opposite direction."
+    lighting: "Same gray tone; slight vignette difference."
+    notes: "SFX: faint ticking clock resumes."
+  - index: 14
+    time: "02:55–03:10"
+    camera: "Slow zoom on Ethan’s eye; reflection shows the player’s camera view."
+    lighting: "Soft, flat key; focus drifts out at final frame."
+    notes: "VO (choir, inverted) 'You are the watcher. You are the watched.'"
+  - index: 15
+    time: "03:10–03:30"
+    camera: "Fade to black; brief white text appears then distorts."
+    lighting: "Blackout."
+    notes: "Text: 'Fragment restored to origin.' – glitch font; cutoff static end."

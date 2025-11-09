@@ -1,0 +1,72 @@
+title: "STORY PATH 2 — THE SUNK LEGEND"
+frames:
+  - index: 1
+    time: "00:00–00:05"
+    camera: "WS – mud surface rippling under faint rain."
+    lighting: "Cold gray key; reflections distort faces beneath."
+    notes: "SFX: bell low-pass, 40Hz sub rumble."
+  - index: 2
+    time: "00:05–00:12"
+    camera: "360° handheld pan – reflections shift like figures trying to speak."
+    lighting: "Rippling gloom with flicker noise; no direct source."
+    notes: "Layered VO whispers overlapping in reverse playback."
+  - index: 3
+    time: "00:12–00:20"
+    camera: "CU – Ethan kneeling in shallow water, hands trembling."
+    lighting: "Pale cyan top light; slight strobe sync with heartbeat."
+    notes: "VO Ethan (strained) 'You were supposed to come back…'"
+  - index: 4
+    time: "00:20–00:30"
+    camera: "OTS G→E – Graves stands above waterline, distorted by reflection."
+    lighting: "Dual color contrast – warm rim on Graves, cold fill on Ethan."
+    notes: "VO Graves (muffled echo) 'You never left this place.'"
+  - index: 5
+    time: "00:30–00:40"
+    camera: "Tracking MS – Ethan submerges; camera follows underwater."
+    lighting: "Dim green volumetric haze, particles drift upward."
+    notes: "SFX: distant church bell underwater; low-pass at 300Hz."
+  - index: 6
+    time: "00:40–00:50"
+    camera: "CU – bubbles fade to black; faint reflection of school hallway above."
+    lighting: "No direct source; only ambient decay light."
+    notes: "VO Maya (faint) 'You were the legend we buried.'"
+  - index: 7
+    time: "00:50–01:00"
+    camera: "WS – silt floor, diary sinking slowly beside Ethan’s motionless hand."
+    lighting: "Soft cyan falloff; vignette bloom on pages."
+    notes: "SFX: page flutter slowed to 0.5x; faint breath loop."
+  - index: 8
+    time: "01:00–01:15"
+    camera: "Reverse MS – Graves kneels by the water’s edge, reaching down."
+    lighting: "Contrast flicker; warm light fails to touch surface."
+    notes: "VO Graves 'You don’t wake up by drowning the past.'"
+  - index: 9
+    time: "01:15–01:30"
+    camera: "High-angle WS – ripples fade; still mirror of sky replaces Ethan’s body."
+    lighting: "Neutral overcast tone; reflection only shows clouds."
+    notes: "Music: cello drone fading into silence."
+  - index: 10
+    time: "01:30–01:45"
+    camera: "Slow zoom into still water; faint image of classroom chairs underwater."
+    lighting: "Flat diffuse; no visible shadows."
+    notes: "VO Ethan (soft) 'It’s quiet here. Maybe that’s enough.'"
+  - index: 11
+    time: "01:45–02:00"
+    camera: "Fade to WS – empty lake, overcast sky, one ripple."
+    lighting: "Desaturated monochrome."
+    notes: "SFX: one final bell chime, decaying for 7s."
+  - index: 12
+    time: "02:00–02:20"
+    camera: "Fade to black; overlay of diary text emerging slowly."
+    lighting: "Black screen with flickering white type."
+    notes: "Text: 'Some legends are better left beneath the surface.'"
+  - index: 13
+    time: "02:20–02:40"
+    camera: "Static CU – muddy pages drying in sunlight."
+    lighting: "Warm key; hope returns subtly."
+    notes: "Music cue: ‘Sunken Hymn’ – soft organ + ambient pads."
+  - index: 14
+    time: "02:40–03:00"
+    camera: "Fade out; faint silhouette of Ethan walking on distant shore."
+    lighting: "Backlit golden mist; silhouette dissolves before full reveal."
+    notes: "VO (choir, distant) 'You went home, but the water stayed.'"

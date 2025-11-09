@@ -1,0 +1,77 @@
+title: "STORY PATH 5 — THE PUPPETMASTER"
+frames:
+  - index: 1
+    time: "00:00–00:10"
+    camera: "CU – diary ignites slowly, ink running backward as it burns."
+    lighting: "Red amber flame fills frame edges; warm lens flare."
+    notes: "SFX: slow crackle; faint reversed bell tone underneath."
+  - index: 2
+    time: "00:10–00:18"
+    camera: "CU – old portrait on office wall rewrites itself in ash strokes."
+    lighting: "Cold neutral key with gentle flicker; shadows ripple outward."
+    notes: "SFX: typewriter keystrokes echo; rhythmic, steady tempo."
+  - index: 3
+    time: "00:18–00:28"
+    camera: "MS – Ethan enters the Warden’s office, smoke curling from the floor vents."
+    lighting: "Toplight shafts through dust; red emergency hue creeping in."
+    notes: "VO Ethan (soft) 'So this is where you wrote the rules…'"
+  - index: 4
+    time: "00:28–00:40"
+    camera: "OTS E→desk – diary ashes form puppet strings across table surface."
+    lighting: "Split lighting – warm on Ethan, cold on desk."
+    notes: "VO Warden (off-screen) 'Someone had to hold the strings when you dropped them.'"
+  - index: 5
+    time: "00:40–00:55"
+    camera: "Reveal CU – The Warden’s shadow puppet moves independently on wall."
+    lighting: "Sharp tungsten key; shadow desynchronized from real motion."
+    notes: "SFX: rope tension creak; faint music box motif in background."
+  - index: 6
+    time: "00:55–01:10"
+    camera: "CU – Ethan lifts his hand; strings appear attached to his fingers."
+    lighting: "Hard rim from below; subtle flicker on motion."
+    notes: "VO Ethan 'Then who’s holding you?'"
+  - index: 7
+    time: "01:10–01:25"
+    camera: "WS – office walls lined with moving portraits; each shows a younger Ethan."
+    lighting: "Alternating warm/cold pulses every 3 seconds."
+    notes: "VO Warden 'The one who stays remembers. The one who runs forgets.'"
+  - index: 8
+    time: "01:25–01:40"
+    camera: "Tracking MS – Ethan cuts invisible strings with a letter opener."
+    lighting: "Sparks of red light each time string severs."
+    notes: "SFX: high-pitch string snaps layered with whisper breaths."
+  - index: 9
+    time: "01:40–01:55"
+    camera: "CU – Warden’s reflection smiles as real Warden fades away."
+    lighting: "Desaturation ramp from 100%→30% over duration."
+    notes: "VO Warden (fading) 'You’ll take my place now.'"
+  - index: 10
+    time: "01:55–02:10"
+    camera: "MS – Ethan sits behind the desk; uniform coat appears on his shoulders."
+    lighting: "Low warm key from lamp; deep shadow on half his face."
+    notes: "Music: 'Strings of Control' motif; slow cello + ticking metronome."
+  - index: 11
+    time: "02:10–02:25"
+    camera: "CU – Ethan signs the ledger with trembling hand."
+    lighting: "Spotlight tight focus; background falls to black."
+    notes: "VO Ethan (whisper) 'Maybe it was never him…'"
+  - index: 12
+    time: "02:25–02:40"
+    camera: "WS – chair rotates toward camera; only puppet strings remain."
+    lighting: "Overexposed halo; gradual fade-out of texture detail."
+    notes: "SFX: string reverb tail 10s; clock stops mid-tick."
+  - index: 13
+    time: "02:40–03:00"
+    camera: "Static frame – empty office, smoke dissipating."
+    lighting: "Cold neutral backlight from doorway."
+    notes: "VO Choir (distant): 'He who leads becomes the one led.'"
+  - index: 14
+    time: "03:00–03:20"
+    camera: "Tracking WS – camera retreats down hallway alone."
+    lighting: "White light flicker every 2s; subtle motion blur."
+    notes: "Music: descending piano motif fading to silence."
+  - index: 15
+    time: "03:20–03:40"
+    camera: "Fade to CU – single puppet string swings in darkness."
+    lighting: "One warm spot; slow fade to black."
+    notes: "Text overlay: 'Control was just another cage.'"
