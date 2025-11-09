@@ -48,18 +48,24 @@ fn main() {
         .add_plugins(EscapeRoutePlugin)
         .add_systems(Startup, setup_menu_camera)
         .add_systems(Startup, spawn_player)
+        // Menu input / movement
         .add_systems(Update, menu_input.run_if(in_state(GamePhase::Menu)))
+        .add_systems(Update, player_movement.run_if(in_state(GamePhase::Menu)))
+        // Start route from trigger
         .add_systems(Update, on_start_route.run_if(in_state(GamePhase::Menu)))
+        // Timeline playback
         .add_systems(Update, run_timeline.run_if(in_state(GamePhase::InTimeline)))
         .add_systems(Update, check_timeline_finished.run_if(in_state(GamePhase::InTimeline)))
+        // Progression monitoring + unlock notifier
         .add_systems(Update, progression_monitor)
+        .add_systems(Update, log_final_bell_unlocked)
         .run();
 }
 
 fn setup_menu_camera(mut commands: Commands) {
     commands.spawn(Camera2dBundle::default());
     info!("Freshman Roll — Route Prototype Booted");
-    info!("Walk onto colored squares to trigger escape routes.");
+    info!("Controls: WASD to move the yellow square. Touch a colored square to start a route.");
 }
 
 fn spawn_player(mut commands: Commands) {
@@ -77,11 +83,40 @@ fn spawn_player(mut commands: Commands) {
     ));
 }
 
-fn menu_input(
-    keyboard: Res<ButtonInput<KeyCode>>,
-) {
+fn menu_input(keyboard: Res<ButtonInput<KeyCode>>) {
     if keyboard.just_pressed(KeyCode::F1) {
         info!("Debug: F1 pressed (menu is active).");
+    }
+}
+
+// NEW: simple WASD movement so you can reach the triggers
+fn player_movement(
+    time: Res<Time>,
+    keyboard: Res<ButtonInput<KeyCode>>,
+    mut q: Query<&mut Transform, With<Player>>,
+) {
+    let Ok(mut t) = q.get_single_mut() else { return; };
+
+    let mut dir = Vec2::ZERO;
+    if keyboard.pressed(KeyCode::KeyW) || keyboard.pressed(KeyCode::ArrowUp) {
+        dir.y += 1.0;
+    }
+    if keyboard.pressed(KeyCode::KeyS) || keyboard.pressed(KeyCode::ArrowDown) {
+        dir.y -= 1.0;
+    }
+    if keyboard.pressed(KeyCode::KeyA) || keyboard.pressed(KeyCode::ArrowLeft) {
+        dir.x -= 1.0;
+    }
+    if keyboard.pressed(KeyCode::KeyD) || keyboard.pressed(KeyCode::ArrowRight) {
+        dir.x += 1.0;
+    }
+
+    if dir != Vec2::ZERO {
+        let speed = 300.0;
+        let delta = time.delta_seconds();
+        let movement = dir.normalize() * speed * delta;
+        t.translation.x += movement.x;
+        t.translation.y += movement.y;
     }
 }
 
@@ -96,7 +131,7 @@ fn on_start_route(
             match load_timeline_from_file(path) {
                 Ok(timeline) => {
                     info!("Starting timeline for route {} -> {}", route_id, path);
-                    info!("Timeline: {}", timeline.title); // Use title to silence narrative warning
+                    info!("Timeline: {}", timeline.title);
                     commands.insert_resource(ActiveTimeline::from_timeline(&timeline));
                     commands.insert_resource(ActiveRoute { id: route_id });
                     commands.spawn((
@@ -123,10 +158,10 @@ fn on_start_route(
 
 fn run_timeline(
     time: Res<Time>,
-    mut active: Option<ResMut<ActiveTimeline>>,
+    active: Option<ResMut<ActiveTimeline>>,
     mut backdrop_q: Query<&mut Sprite, With<TimelineBackdrop>>,
 ) {
-    let Some(active) = active.as_mut() else { return; };
+    let Some(mut active) = active else { return; };
     let just_advanced = active.tick_and_maybe_advance(time.delta());
     if let Some(frame) = active.current_frame() {
         if just_advanced {
@@ -188,10 +223,16 @@ fn progression_monitor(
     }
 }
 
+// NEW: log unlock
+fn log_final_bell_unlocked(mut ev: EventReader<FinalBellUnlocked>) {
+    for _ in ev.read() {
+        info!("Final Bell unlocked! A new meta-ending can now be exposed in your menu.");
+    }
+}
+
 fn color_for_index(i: usize) -> Color {
     let r = (((i as f32) * 37.0) % 255.0) / 255.0;
     let g = (((i as f32) * 83.0) % 255.0) / 255.0;
     let b = (((i as f32) * 149.0) % 255.0) / 255.0;
     Color::srgb(r.max(0.15), g.max(0.15), b.max(0.15))
-
 }
