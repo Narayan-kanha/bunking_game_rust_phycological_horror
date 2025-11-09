@@ -1,8 +1,8 @@
 use std::collections::HashSet;
+use bevy::prelude::*;
 use crate::endings::GameEnding;
 
-/// Tracks which endings are completed and whether the Final Bell is unlocked.
-#[derive(Debug)]
+#[derive(Debug, Resource)]
 pub struct GameProgress {
     pub completed: HashSet<GameEnding>,
     pub final_bell_unlocked: bool,

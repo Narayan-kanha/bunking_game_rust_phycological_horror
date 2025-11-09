@@ -1,0 +1,82 @@
+title: "STORY PATH 6 — THE LEGEND"
+frames:
+  - index: 1
+    time: "00:00–00:08"
+    camera: "WS – Ethan climbs the outer wall at dawn; camera pans slowly upward."
+    lighting: "Golden lens flare; long shadows stretching across courtyard."
+    notes: "SFX: breath rustle; faint morning birds mixed with wind."
+  - index: 2
+    time: "00:08–00:16"
+    camera: "MS – school bus idles on the road beyond; exhaust drifts in sunlight."
+    lighting: "Strong backlight from sunrise; orange rim along edges."
+    notes: "SFX: single bell toll echoes across valley."
+  - index: 3
+    time: "00:16–00:30"
+    camera: "CU – Ethan’s foot slips on final ledge; shot handheld with micro-shake."
+    lighting: "Warm hue flare washes frame for 0.5s; partial lens obstruction."
+    notes: "VO Ethan (breathless) 'Almost free…'"
+  - index: 4
+    time: "00:30–00:45"
+    camera: "WS – rooftop flag waves behind; Ethan pulls himself over wall edge."
+    lighting: "Diffused amber key; dust sparkles in beam."
+    notes: "SFX: muted cheer echoing from nowhere."
+  - index: 5
+    time: "00:45–01:00"
+    camera: "MS – Ethan runs toward bus; lens whip pan to match speed."
+    lighting: "Balanced daylight; chromatic aberration along periphery."
+    notes: "VO Cass (memory echo) 'You made it, right?'"
+  - index: 6
+    time: "01:00–01:15"
+    camera: "CU – bus driver’s mirror; reflection shows empty seat where Ethan should be."
+    lighting: "Cool neutral inside bus; warm exterior spill."
+    notes: "SFX: bus door hiss; ambient tone drop -10dB."
+  - index: 7
+    time: "01:15–01:30"
+    camera: "Tracking WS – bus departs down curved road; dust cloud trails behind."
+    lighting: "Backlit haze; horizon washed with pale gold."
+    notes: "Music: 'Reunion Theme' reprise from Path 1; low piano."
+  - index: 8
+    time: "01:30–01:45"
+    camera: "CU – dashboard photo of school crew; Ethan’s face scratched out."
+    lighting: "Overexposed corners; faded color filter."
+    notes: "VO Maya (whisper) 'He’s just a story now.'"
+  - index: 9
+    time: "01:45–02:00"
+    camera: "WS – school rooftop seen from distance; no movement."
+    lighting: "Cool gray-blue; faint lens dust."
+    notes: "SFX: tape hiss; faint rewind noise begins."
+  - index: 10
+    time: "02:00–02:15"
+    camera: "CU – old VHS screen playback of Ethan climbing wall again."
+    lighting: "CRT flicker with scanline overlay."
+    notes: "VO Narrator (child voice) 'They say he jumped, but no one saw him land.'"
+  - index: 11
+    time: "02:15–02:30"
+    camera: "MS – camera tilts down to empty playground; shadows linger too long."
+    lighting: "Soft overcast; subtle vignette pulsation."
+    notes: "SFX: reversed laughter mixed under ambient wind."
+  - index: 12
+    time: "02:30–02:50"
+    camera: "WS – the town viewed from distance; horizon warps subtly."
+    lighting: "Neutral daylight; 10% desaturation ramp over time."
+    notes: "Music: layered guitars fading; background vinyl crackle."
+  - index: 13
+    time: "02:50–03:10"
+    camera: "CU – news clipping fades in: 'MAPLE RIDGE MYSTERY STILL UNSOLVED.'"
+    lighting: "Paper texture close-up; grain overlay."
+    notes: "VO TJ (recorded) 'Maybe he never left at all.'"
+  - index: 14
+    time: "03:10–03:25"
+    camera: "Slow zoom – reflection in newspaper glass shows Ethan standing nearby."
+    lighting: "Soft white fill; reflection opacity oscillates at 30%."
+    notes: "SFX: faint heartbeat under audio bed."
+  - index: 15
+    time: "03:25–03:45"
+    camera: "WS – Ethan turns and walks into sunrise; camera flares out completely."
+    lighting: "Full white flare; image blown to pure overexposure."
+    notes: "VO Choir (soft) 'Legends don’t leave. They wait to be retold.'"
+  - index: 16
+    time: "03:45–04:00"
+    camera: "Fade to black; faint glimmer of diary text fading in."
+    lighting: "Black with gold flicker noise texture."
+    notes: "Text: 'THE LEGEND – END.'"

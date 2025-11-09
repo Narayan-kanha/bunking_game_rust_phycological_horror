@@ -1,5 +1,3 @@
-/// Enumeration of all endings. The FinalBell (meta) is excluded from the
-/// primary completion set except for unlocking logic.
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum GameEnding {
     TrueWake,
@@ -8,14 +6,11 @@ pub enum GameEnding {
     Puppetmaster,
     FragmentedMind,
     SunkLegend,
-    FinalBell, // Meta unlock sequence
+    FinalBell,
 }
 
 impl GameEnding {
     pub fn is_primary(&self) -> bool {
-        match self {
-            GameEnding::FinalBell => false,
-            _ => true,
-        }
+        !matches!(self, GameEnding::FinalBell)
     }
 }

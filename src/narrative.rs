@@ -13,7 +13,7 @@ pub struct Timeline {
 #[derive(Debug, Deserialize, Clone)]
 pub struct Frame {
     pub index: usize,
-    pub time: String,     // "00:00–00:06"
+    pub time: String,
     pub camera: String,
     pub lighting: String,
     #[serde(default)]
@@ -22,12 +22,12 @@ pub struct Frame {
 
 impl Timeline {
     pub fn frame_duration_secs(&self, idx: usize) -> f32 {
-        if let Some(f) = self.frames.get(idx) {
-            let (a, b) = parse_time_range(&f.time);
-            (b - a).max(0.01)
-        } else {
-            0.0
-        }
+        self.frames.get(idx)
+            .map(|f| {
+                let (a, b) = parse_time_range(&f.time);
+                (b - a).max(0.01)
+            })
+            .unwrap_or(0.0)
     }
 }
 
@@ -41,33 +41,25 @@ pub struct ActiveTimeline {
 
 impl ActiveTimeline {
     pub fn from_timeline(t: &Timeline) -> Self {
-        let duration = t.frame_duration_secs(0);
         Self {
             timeline: t.clone(),
             current: 0,
-            timer: Timer::from_seconds(duration, TimerMode::Once),
+            timer: Timer::from_seconds(t.frame_duration_secs(0), TimerMode::Once),
             finished: false,
         }
     }
 
     pub fn current_frame(&self) -> Option<&Frame> {
-        if self.finished {
-            None
-        } else {
-            self.timeline.frames.get(self.current)
-        }
+        if self.finished { None } else { self.timeline.frames.get(self.current) }
     }
 
     pub fn tick_and_maybe_advance(&mut self, delta: Duration) -> bool {
-        if self.finished {
-            return false;
-        }
+        if self.finished { return false; }
         self.timer.tick(delta);
         if self.timer.finished() {
             self.current += 1;
             if self.current < self.timeline.frames.len() {
-                let secs = self.timeline.frame_duration_secs(self.current);
-                self.timer = Timer::from_seconds(secs, TimerMode::Once);
+                self.timer = Timer::from_seconds(self.timeline.frame_duration_secs(self.current), TimerMode::Once);
                 true
             } else {
                 self.finished = true;
@@ -79,16 +71,11 @@ impl ActiveTimeline {
     }
 }
 
-pub fn load_timeline_from_yaml_str(yaml: &str) -> Result<Timeline> {
-    let t: Timeline = serde_yaml::from_str(yaml).context("Parsing YAML timeline")?;
+pub fn load_timeline_from_file(path: &str) -> Result<Timeline> {
+    let s = fs::read_to_string(path).with_context(|| format!("Reading timeline file {path}"))?;
+    let t: Timeline = serde_yaml::from_str(&s).context("Parsing YAML timeline")?;
     validate_timeline(&t)?;
     Ok(t)
-}
-
-pub fn load_timeline_from_file(path: &str) -> Result<Timeline> {
-    let content = fs::read_to_string(path)
-        .with_context(|| format!("Reading timeline file: {}", path))?;
-    load_timeline_from_yaml_str(&content)
 }
 
 fn validate_timeline(t: &Timeline) -> Result<()> {
@@ -104,7 +91,6 @@ fn validate_timeline(t: &Timeline) -> Result<()> {
     Ok(())
 }
 
-// Accepts "mm:ss–mm:ss" or "mm:ss-mm:ss"
 fn parse_time_range(s: &str) -> (f32, f32) {
     let cleaned = s.trim().replace('–', "-");
     let mut parts = cleaned.split('-').map(str::trim);
@@ -118,4 +104,5 @@ fn parse_mmss(s: &str) -> f32 {
     let m: f32 = parts.next().unwrap_or("0").parse().unwrap_or(0.0);
     let sec: f32 = parts.next().unwrap_or("0").parse().unwrap_or(0.0);
     m * 60.0 + sec
+
 }
